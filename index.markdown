@@ -52,14 +52,4 @@ permalink: /
 
 
 
-## PoSH
-
-[The training](https://romc.gitbook.io/learn-to-posh/) is hosted on Gitbooks.
-
----
-
-## Malware Analysis
-
-[The training](https://khannay.gitbook.io/malware-analysis) is hosted on
-Gitbooks.
 
