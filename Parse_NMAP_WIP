@@ -1,0 +1,39 @@
+#!/bin/bash
+
+declare -A nmap
+
+while read line; do
+        if [[ $line =~ ^Nmap\ scan\ report\ for\ ([0-9]+\.[0-9]+\.[0-9]+\.[0-9]+)$ ]]; then
+                ip=${BASH_REMATCH[1]}
+
+        elif [[ $line =~ ^[0-9]+/(tcp|udp)\ +[^\ ]+\ +([^\ ]+) ]]; then
+                serv=${BASH_REMATCH[2]}
+
+                if [ -x ${nmap[$serv]} ]; then
+                        nmap[$serv]=$ip
+
+                else
+                        nmap[$serv]="${nmap[$serv]},$ip"
+
+                fi
+
+         fi
+
+done < NMAP_all_hosts.txt
+
+
+#c=$(cat NMAP_all_hosts.txt | egrep "tcp\s+open" | awk '{print $NF}' | sort | uniq | wc -l)
+
+for serv in ${!nmap[@]}; do
+        echo "Service: $serv Count:"
+        echo ============
+        IFS=','
+        for ip in ${nmap[$serv]}; do
+                echo $ip
+        done
+        echo
+donedone
+
+
+
+
