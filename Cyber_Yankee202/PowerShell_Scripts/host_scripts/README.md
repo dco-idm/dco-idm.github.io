@@ -1,3 +1,6 @@
+## 0.0 Pre-Requisites
+Download [psexec.exe](https://download.sysinternals.com/files/PSTools.zip) and [procdump.exe](https://download.sysinternals.com/files/Procdump.zip)
+
 ## 1.1 Save Credentials
 Run the secret_snacktime.ps1 script, follow the prompts, and save credentials.  Explanation of this script is in section 2.2.
 Syntax is: 
