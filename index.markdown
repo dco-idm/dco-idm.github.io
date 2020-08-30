@@ -35,8 +35,8 @@ permalink: /
 ## Level 2 Training (Deeper Background Material)
 1. Malware II (Dynamic Analysis, Reversing, Signature Dev)
 2. Programming (Compiled as needed for basic reversing)
-3. Windows Operating System Concepts (Process Injection?)
-4. Red Team Pentration Testing Fundamentals (Exploit Development, Priv Esc)
+3. Windows Operating System Concepts (Process Injection)
+4. Red Team Pentration Testing Fundamentals ([Exploit Development](https://github.com/dco-idm/dco-idm.github.io), Priv Esc)
 
 ## Level 3 Training (Protection)
 1. Incident Response (Ransomware, DDOS, Spyware)
