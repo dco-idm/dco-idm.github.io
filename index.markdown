@@ -16,6 +16,8 @@ permalink: /
 
 ---
 
+Tutorial on creating a [training module using gitbooks](https://khannay.gitbook.io/building-training-dco-idm/)
+
 ## Level 0 Training (Fundamentals)
 1. Networking Basics 
 2. Linux Concepts
