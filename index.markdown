@@ -38,7 +38,7 @@ Tutorial on creating a [training module using gitbooks](https://khannay.gitbook.
 1. Malware II (Dynamic Analysis, Reversing, Signature Dev)
 2. Programming (Compiled as needed for basic reversing)
 3. Windows Operating System Concepts ([Process Injection](https://thebryanwang.gitbook.io/process-injection/))
-4. Red Team Pentration Testing Fundamentals ([Exploit Development](https://romc.gitbook.io/exploit-dev/), Priv Esc)
+4. Red Team Pentration Testing Fundamentals ([Exploit Development 1](https://romc.gitbook.io/exploit-dev/), [Exploit Development II](https://khannay.gitbook.io/buffer-overflows/),  Priv Esc)
 
 ## Level 3 Training (Protection)
 1. Incident Response (Ransomware, DDOS, Spyware)
