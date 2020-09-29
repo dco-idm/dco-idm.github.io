@@ -45,7 +45,7 @@ Tutorial on creating a [training module using gitbooks](https://khannay.gitbook.
 2. Hunt Mission
 3. Target Hardening (Host)
 4. Target Hardening (Network)
-5. Forensics (SANS FOR 500)
+5. [Forensics](https://benjamin-n-opel.gitbook.io/advanced-host-forensics/) (SANS FOR 500)
 
 ## Level 4 Training (Planning)
 1. Planning Defensive Cyber Operations
