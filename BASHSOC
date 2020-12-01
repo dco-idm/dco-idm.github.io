@@ -1,0 +1,63 @@
+#!/bin/bash
+
+#START FUNCTION
+script () {
+
+#EXECUTE EXEC SSH CONNECTION
+echo "...opening ssh connection..."
+sleep 2
+exec 101<>/dev/tcp/localhost/22 && cat <& 101 &
+
+#VARIABLES
+pid=$(ps -ef | grep ssh | grep accepted | awk '{print $2}' | tail -n1)
+pipe=$(ls -al /proc/$pid/fd | grep "pipe" | awk '{print $9}')
+oct=$(stat -c "%a %n" /proc/$pid/fd/$pipe | awk '{print $1}')
+md5=$(stat -c "%a %n" /proc/$pid/fd/$pipe | awk '{print $1}' | md5sum)
+
+echo "...retreiving information..."
+sleep 2
+
+#LIST PIPE INFORMATION
+echo "----------PIPE INFORMATION----------"
+sleep 1
+ls -al /proc/$pid/fd/$pipe
+sleep 1
+
+#SHOW ARTIFACTS
+echo "----------ARTIFACTS----------"
+sleep 1
+
+echo "----------PERMISSIONS----------"
+sleep 1
+echo "OCTAL VALUE:$oct"
+sleep 1
+
+echo "----------MD5 HASH----------"
+sleep 1
+echo "MD5SUM:$md5"
+sleep 1
+
+#LIST OPEN FILES WITH EXEC SSH PID
+echo "----------LIST OF OPEN FILES----------"
+sleep 1
+lsof | grep -e $pid
+sleep 1
+
+echo "--------TCP SOCKET STATISTICS----------"
+sleep 1
+ss -ta
+sleep 1
+
+echo "COMPLETE"
+sleep 1
+
+#KILL PROCESS
+echo "...killing process..."
+sudo kill -9 $pid
+sleep 2
+
+#END FUNCTION
+}
+script
+
+

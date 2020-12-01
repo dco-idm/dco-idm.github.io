@@ -1,0 +1,54 @@
+!/bin/bash
+
+#Variable for reference file after running the script (ex. ./nmap.sh NMAP_all_hosts.txt will replace every $file in the script with NMAP_all_hosts.txt)
+file=$1
+
+#Variables and commands made to create and reference important content within the NMAP file
+#-----------------------------------------------------------------------------
+#Variable to pull all unique service information from the NMAP scan
+s=$(egrep "tcp\s+open" $file | awk '{print $NF}' | sort | uniq)
+
+#Greping all IP addresses with their associated services underneath them and outputing them into a file to parse from later
+egrep "\b[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+\b|\b+\/tcp\s+open\b" $file | awk '{print $NF}' | grep -v "(10)." > clean
+
+#Simple variable to find IP addresses
+ip='^192'
+
+#For loop to go through each unique service
+for serv in $s
+do
+
+        tmp_ip=''
+        cat /dev/null > iplist
+        count=0
+
+#While loop to read through the clean file line by line
+        while read line
+        do
+
+                if [[ $line =~ $ip ]];then
+                        tmp_ip=$line
+                fi
+
+                if [[ $line == $serv ]];then
+                        echo $tmp_ip >> iplist
+                fi
+
+        done < clean
+
+#Counting how many IP addresses that are associated to a service
+        c=$(cat iplist | sort | uniq | wc -l)
+
+#Display all data in an easy-to-read format
+        display=$(cat iplist | sort | uniq)
+        echo "Service: $serv Count: $c"
+        echo "========================"
+        echo "$display"
+        echo
+
+sleep 1
+done
+
+rm clean iplist
+
+
