@@ -19,7 +19,7 @@ permalink: /
 Tutorial on creating a [training module using gitbooks](https://khannay.gitbook.io/building-training-dco-idm/)
 
 ## Level 0 Training (Fundamentals)
-1. Networking Basics ([Network Intrusion](https://thebryanwang.gitbook.io/network-intrusion/))
+1. ([Networking Basics](https://captmouse.gitbook.io/defense/)) ([Network Intrusion](https://thebryanwang.gitbook.io/network-intrusion/))
 2. Linux Concepts
 3. Windows Concepts
 4. Security Basics (common vulnerabilities/attacks, security concepts)
