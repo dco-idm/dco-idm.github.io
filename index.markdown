@@ -3,6 +3,9 @@ layout: default
 title: Home
 nav_order: 1
 permalink: /
+title: defense
+nav_order: 2
+permalink: https://app.gitbook.com/@captmouse/s/defense
 ---
 
 # DCO-IDM Training
